@@ -1,0 +1,9 @@
+// Bulma
+@import "~bulma/bulma.sass";
+
+.hero.is-primary .title {
+    color: #363636;
+}
+.hero.is-primary .menu .menu-list a:hover {
+    color: #363636;
+}
