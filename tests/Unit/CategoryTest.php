@@ -40,7 +40,7 @@ class CategoryTest extends TestCase
             'parent_id' => 1,
         ]);
 
-        $this->json('get', 'categories/delete/' . $category->id, [])
+        $this->json('delete', 'categories/delete/' . $category->id, [])
              ->assertStatus(200);
     }
 }
