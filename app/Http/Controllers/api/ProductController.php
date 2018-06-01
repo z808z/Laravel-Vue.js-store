@@ -12,6 +12,7 @@ class ProductController extends Controller
     public function getProductsByCategory($category)
     {
         $products = Category::where('slug', $category)->first()->products()->get();
+
         return $products;
     }
 }

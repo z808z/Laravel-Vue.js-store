@@ -2,21 +2,21 @@
     <div class="columns is-multiline">
         <div class="column is-one-quarter" v-for="product in products">
             <div class="card">
-              <div class="card-image">
-                <figure class="image">
-                  <img :src="product.img" alt="Placeholder image">
-                </figure>
-              </div>
-              <div class="card-content">
-                <div class="media">
-                  <div class="media-content">
-                    <p class="title is-4">{{ product.name }}</p>
-                  </div>
+                <div class="card-image">
+                    <figure class="image">
+                        <img :src="product.img" alt="Placeholder image">
+                    </figure>
                 </div>
-                <div class="content">
-                    {{ product.description }}
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-content">
+                            <p class="title is-4">{{ product.name }}</p>
+                        </div>
+                    </div>
+                    <div class="content">
+                        {{ product.description }}
+                    </div>
                 </div>
-              </div>
             </div>
         </div>
     </div>

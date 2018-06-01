@@ -15,9 +15,9 @@ use Faker\Generator as Faker;
 
 $factory->define(App\Product::class, function (Faker $faker) {
     return [
-        'name' => $faker->word,
+        'name'        => $faker->word,
         'description' => $faker->text($maxNbChars = 200),
-        'img' => $faker->imageUrl($width = 640, $height = 480),
-        'category_id' => mt_rand(1, 10)
+        'img'         => $faker->imageUrl($width = 640, $height = 480),
+        'category_id' => mt_rand(1, 10),
     ];
 });

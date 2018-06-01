@@ -18,39 +18,39 @@ const mainStore = new Vuex.Store({
         }
     },
     mutations: {
-        updateCategories (state, payload) {
+        updateCategories(state, payload) {
             state.categories = payload.categories;
         },
-        updateProducts (state, payload) {
+        updateProducts(state, payload) {
             state.products = payload.products;
         }
     },
     actions: {
-        loadCategories (context) {
+        loadCategories(context) {
             let url = '/api/categories/';
             axios.get(url)
-            .then(response => {
-                context.commit({
-                  type: 'updateCategories',
-                  categories: response.data
-                });
-            })
-            .catch(e => { 
-                this.errors.push(e)
-            })
+                .then(response => {
+                    context.commit({
+                        type: 'updateCategories',
+                        categories: response.data
+                    });
+                })
+                .catch(e => {
+                    this.errors.push(e)
+                })
         },
-        loadProducts (context, category) {
+        loadProducts(context, category) {
             let url = '/api/categories/' + category;
             axios.get(url)
-            .then(response => {
-                context.commit({
-                  type: 'updateProducts',
-                  products: response.data
-                });
-            })
-            .catch(e => { 
-                this.errors.push(e)
-            })
+                .then(response => {
+                    context.commit({
+                        type: 'updateProducts',
+                        products: response.data
+                    });
+                })
+                .catch(e => {
+                    this.errors.push(e)
+                })
         }
     }
 });

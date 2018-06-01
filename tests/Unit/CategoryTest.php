@@ -16,31 +16,31 @@ class CategoryTest extends TestCase
      */
     public function testAssertStatus()
     {
-		$this->json('get', '/api/category/category1', [])
-            ->assertStatus(200);
+        $this->json('get', '/api/category/category1', [])
+             ->assertStatus(200);
     }
 
     public function testAddCategory()
-    {    
+    {
         $category = Category::create([
-            'name' => 'Test Category',
-            'slug' => 'test-category',
-            'parent_id' => 1
+            'name'      => 'Test Category',
+            'slug'      => 'test-category',
+            'parent_id' => 1,
         ]);
 
         $this->json('get', 'categories/' . $category->name, [])
-            ->assertStatus(200);
+             ->assertStatus(200);
     }
 
     public function testDeleteCategory()
     {
         $category = Category::create([
-            'name' => 'Test Category',
-            'slug' => 'test-category',
-            'parent_id' => 1
+            'name'      => 'Test Category',
+            'slug'      => 'test-category',
+            'parent_id' => 1,
         ]);
 
         $this->json('get', 'categories/delete/' . $category->id, [])
-            ->assertStatus(200);
+             ->assertStatus(200);
     }
 }

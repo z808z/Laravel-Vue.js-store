@@ -8,12 +8,11 @@ use Kalnoy\Nestedset\NodeTrait;
 class Category extends Model
 {
     use NodeTrait;
-    
-	protected $fillable = ['name', 'slug', 'parent_id'];
+
+    protected $fillable = ['name', 'slug', 'parent_id'];
 
     public function products()
     {
         return $this->hasMany('App\Product');
     }
-
 }

@@ -16,8 +16,6 @@ use App\Appeal;
 
 Route::get('categories', 'api\CategoryController@getAll');
 Route::get('categories/{category}', 'api\ProductController@getProductsByCategory');
-
-
 Route::get('categories/store', 'api\CategoryController@store');
 Route::get('categories/update/{id_category}', 'api\CategoryController@update');
 Route::get('categories/delete/{id_category}', 'api\CategoryController@delete');
